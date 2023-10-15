@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\alber.DESKTOP-PRJJNQN\\OneDrive\\BibleCode\\BibleCode\\BibleCode.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\alber.DESKTOP-PRJJNQN\\OneDrive\\BibleCode\\BibleCode\\BibleCode.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\alber.DESKTOP-PRJJNQN\\OneDrive\\BibleCode\\BibleCode\\BibleCode.csproj",
+        "projectName": "BibleCode",
+        "projectPath": "C:\\Users\\alber.DESKTOP-PRJJNQN\\OneDrive\\BibleCode\\BibleCode\\BibleCode.csproj",
+        "packagesPath": "C:\\Users\\alber.DESKTOP-PRJJNQN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alber.DESKTOP-PRJJNQN\\OneDrive\\BibleCode\\BibleCode\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\alber.DESKTOP-PRJJNQN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
