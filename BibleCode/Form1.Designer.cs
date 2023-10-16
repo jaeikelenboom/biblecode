@@ -46,6 +46,15 @@
             button11 = new Button();
             button12 = new Button();
             button13 = new Button();
+            txtSearchFromVerse = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            txtSearchChar = new TextBox();
+            label3 = new Label();
+            label4 = new Label();
+            txtSearchDirection = new TextBox();
+            txtSearchDistance = new TextBox();
+            btnSearch = new Button();
             SuspendLayout();
             // 
             // richTextBoxHebrew
@@ -57,7 +66,6 @@
             richTextBoxHebrew.Size = new Size(457, 202);
             richTextBoxHebrew.TabIndex = 3;
             richTextBoxHebrew.Text = "";
-            richTextBoxHebrew.TextChanged += richTextBox1_TextChanged;
             // 
             // richTextBox2
             // 
@@ -88,7 +96,6 @@
             richTextBoxDebug.Size = new Size(242, 146);
             richTextBoxDebug.TabIndex = 6;
             richTextBoxDebug.Text = "";
-            richTextBoxDebug.TextChanged += richTextBox3_TextChanged;
             // 
             // button1
             // 
@@ -148,7 +155,7 @@
             button6.TabIndex = 12;
             button6.Text = "Number of tavs";
             button6.UseVisualStyleBackColor = true;
-            button6.Click += numberoftavs_Click;
+            button6.Click += Numberoftavs_Click;
             // 
             // button7
             // 
@@ -178,7 +185,7 @@
             button8.TabIndex = 15;
             button8.Text = "AllTavs";
             button8.UseVisualStyleBackColor = true;
-            button8.Click += alltavs_Click;
+            button8.Click += Alltavs_Click;
             // 
             // button9
             // 
@@ -230,11 +237,95 @@
             button13.UseVisualStyleBackColor = true;
             button13.Click += JahWeh_Click;
             // 
+            // txtSearchFromVerse
+            // 
+            txtSearchFromVerse.Location = new Point(652, 42);
+            txtSearchFromVerse.Name = "txtSearchFromVerse";
+            txtSearchFromVerse.Size = new Size(100, 23);
+            txtSearchFromVerse.TabIndex = 21;
+            txtSearchFromVerse.TextChanged += searchfromverse_TextChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(652, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(97, 15);
+            label1.TabIndex = 22;
+            label1.Text = "SearchFromVerse";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(793, 14);
+            label2.Name = "label2";
+            label2.Size = new Size(67, 15);
+            label2.TabIndex = 23;
+            label2.Text = "SearchChar";
+            // 
+            // txtSearchChar
+            // 
+            txtSearchChar.Location = new Point(797, 45);
+            txtSearchChar.Name = "txtSearchChar";
+            txtSearchChar.Size = new Size(72, 23);
+            txtSearchChar.TabIndex = 24;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(899, 19);
+            label3.Name = "label3";
+            label3.Size = new Size(90, 15);
+            label3.TabIndex = 25;
+            label3.Text = "SearchDirection";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(1033, 21);
+            label4.Name = "label4";
+            label4.Size = new Size(87, 15);
+            label4.TabIndex = 26;
+            label4.Text = "SearchDistance";
+            // 
+            // txtSearchDirection
+            // 
+            txtSearchDirection.Location = new Point(909, 46);
+            txtSearchDirection.Name = "txtSearchDirection";
+            txtSearchDirection.Size = new Size(100, 23);
+            txtSearchDirection.TabIndex = 27;
+            // 
+            // txtSearchDistance
+            // 
+            txtSearchDistance.Location = new Point(1043, 45);
+            txtSearchDistance.Name = "txtSearchDistance";
+            txtSearchDistance.Size = new Size(100, 23);
+            txtSearchDistance.TabIndex = 28;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new Point(871, 92);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(75, 23);
+            btnSearch.TabIndex = 29;
+            btnSearch.Text = "btnSearch";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1027, 706);
+            ClientSize = new Size(1168, 706);
+            Controls.Add(btnSearch);
+            Controls.Add(txtSearchDistance);
+            Controls.Add(txtSearchDirection);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(txtSearchChar);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(txtSearchFromVerse);
             Controls.Add(button13);
             Controls.Add(button12);
             Controls.Add(button11);
@@ -256,6 +347,7 @@
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         private void FirstHeandnext50_Click(object sender, EventArgs e)
@@ -282,5 +374,14 @@
         private Button button11;
         private Button button12;
         private Button button13;
+        private TextBox txtSearchFromVerse;
+        private Label label1;
+        private Label label2;
+        private TextBox txtSearchChar;
+        private Label label3;
+        private Label label4;
+        private TextBox txtSearchDirection;
+        private TextBox txtSearchDistance;
+        private Button btnSearch;
     }
 }
