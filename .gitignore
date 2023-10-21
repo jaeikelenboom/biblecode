@@ -1,1 +1,6 @@
+# FIles that don't need to be committed to git for this c# project
 *.dll
+*.pdb
+*.exe
+*.cache
+.vs/*
