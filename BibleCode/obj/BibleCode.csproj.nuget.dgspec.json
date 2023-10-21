@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alber.DESKTOP-PRJJNQN\\OneDrive\\BibleCode\\BibleCode\\BibleCode.csproj": {}
+    "C:\\git\\BibleCode\\BibleCode.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alber.DESKTOP-PRJJNQN\\OneDrive\\BibleCode\\BibleCode\\BibleCode.csproj": {
+    "C:\\git\\BibleCode\\BibleCode.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alber.DESKTOP-PRJJNQN\\OneDrive\\BibleCode\\BibleCode\\BibleCode.csproj",
+        "projectUniqueName": "C:\\git\\BibleCode\\BibleCode.csproj",
         "projectName": "BibleCode",
-        "projectPath": "C:\\Users\\alber.DESKTOP-PRJJNQN\\OneDrive\\BibleCode\\BibleCode\\BibleCode.csproj",
+        "projectPath": "C:\\git\\BibleCode\\BibleCode.csproj",
         "packagesPath": "C:\\Users\\alber.DESKTOP-PRJJNQN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alber.DESKTOP-PRJJNQN\\OneDrive\\BibleCode\\BibleCode\\obj\\",
+        "outputPath": "C:\\git\\BibleCode\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alber.DESKTOP-PRJJNQN\\AppData\\Roaming\\NuGet\\NuGet.Config",

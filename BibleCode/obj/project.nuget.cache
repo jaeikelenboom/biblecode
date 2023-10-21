@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kG5gZS+kMk7thm2pTEoQC8cEeF2vte5VnEBCcCpv4U547WsgmBkr+Gmt0AYiRZ75v+yZKhEeLukTg4LPKlZ6Qw==",
+  "dgSpecHash": "FyNkddG9nbKr1tSpScckX+vgg+pjmCz5Gbp2Y8hDtdEwH7P1gapqnSsYwNVaJ4h3svnc2x8D6F7tw97AubLorQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alber.DESKTOP-PRJJNQN\\OneDrive\\BibleCode\\BibleCode\\BibleCode.csproj",
+  "projectFilePath": "C:\\git\\BibleCode\\BibleCode.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

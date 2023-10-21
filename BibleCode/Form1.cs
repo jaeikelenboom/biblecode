@@ -13,261 +13,26 @@ namespace BibleCode
             // public char searchtext = '\x05EA';
             richTextBoxHebrew.LoadFile("Genesis.rtf", RichTextBoxStreamType.RichText);
             richTextBoxHebrewConcise.LoadFile("GenesisConcise.rtf", RichTextBoxStreamType.RichText);
-
+            txtSearchFromVerse.Text = "Num 1:1";
+            txtSearchChar.Text = '\x05D4'.ToString();
+            txtXthCharacter.Text = 1.ToString();
+            txtSearchDistance.Text = 50.ToString();
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void Firsttavandfifty_Click(object sender, EventArgs e)
         {
-            string thetext = richTextBoxHebrew.Text;
-            //searchtext = '\x05EA';
-            string answer = "";
-            string solution = "";
-            string hebrewconsise = "";
-
-            bool firsttavfound = false;
-            int countertofifty = 0;
-            int nothebrewcharacters = 0;
-            string ii;
-            for (int i = 0; i < thetext.Length; i++)
-            {
-                if (thetext[i] > '\x05CF')
-                {
-                    hebrewconsise += thetext[i];
-                }
-            }
-            // richTextBoxHebrewConcise.Text = hebrewconsise;
-            File.WriteAllText("c:\\intel\\text.rft", hebrewconsise);
-
-
-            for (int i = 0; i < thetext.Length; i++)
-            //for (int i = 0; i < hebrewconsise.Length; i++)
-            {
-                ii = thetext[i].ToString();
-                answer += ((int)thetext[i]) + " ";
-
-
-                if (firsttavfound == true && thetext[i] > '\x05CF')
-                {
-                    richTextBoxDebug.Text = thetext[i] + " " + thetext[i];
-                    countertofifty++;
-                    if (countertofifty == 50)
-                    {
-                        solution += thetext[i];
-                        countertofifty = 0;
-                        richTextBoxHebrew.Select(i, 1);
-                        richTextBoxHebrew.SelectionColor = Color.Red;
-                        richTextBoxHebrewConcise.Select(i - nothebrewcharacters, 1);
-                        richTextBoxHebrewConcise.SelectionColor = Color.Red;
-
-                    }
-
-                }
-                // https://en.wikipedia.org/wiki/Unicode_and_HTML_for_the_Hebrew_alphabet
-                if (thetext[i] == '\x05EA' && firsttavfound == false)
-                {
-                    firsttavfound = true;
-                    solution += thetext[i];
-                    richTextBoxHebrew.Select(i, 1);
-                    richTextBoxHebrew.SelectionColor = Color.Red;
-                    richTextBoxHebrewConcise.Select(i - nothebrewcharacters, 1);
-                    richTextBoxHebrewConcise.SelectionColor = Color.Red;
-
-                }
-                if (thetext[i] < '\x05D0')
-                {
-                    nothebrewcharacters = nothebrewcharacters + 1;
-
-                }
-                if (solution.Length > 3)
-                {
-                    break;
-                }
-            }
-
-            richTextBox2.Text = solution;
+            txtSearchFromVerse.Text = "Gen 1:1";
+            txtSearchChar.Text = '\x05EA'.ToString();
+            txtXthCharacter.Text = 1.ToString();
+            txtSearchDistance.Text = 50.ToString();
+            BibleSearch("Gen 1:1", '\x05EA', 1, 50);
         }
 
 
         private void JahWeh_Click(object sender, EventArgs e)
         {
-            string thetext = richTextBoxHebrew.Text;
-            //searchtext = '\x05EA';
-            string answer = "";
-            string solution = "";
-            string hebrewconsise = "";
-
-            bool firstjodfound = false;
-            int countertofifty = 0;
-            int nothebrewcharacters = 0;
-            string ii;
-            for (int i = 0; i < thetext.Length; i++)
-            {
-                if (thetext[i] > '\x05CF')
-                {
-                    hebrewconsise += thetext[i];
-                }
-            }
-            // richTextBoxHebrewConcise.Text = hebrewconsise;
-            File.WriteAllText("c:\\intel\\text.rft", hebrewconsise);
-
-
-            for (int i = 0; i < thetext.Length; i++)
-            //for (int i = 0; i < hebrewconsise.Length; i++)
-            {
-                ii = thetext[i].ToString();
-                answer += ((int)thetext[i]) + " ";
-
-
-                if (firstjodfound == true && thetext[i] > '\x05CF')
-                {
-                    richTextBoxDebug.Text = thetext[i] + " " + thetext[i];
-                    countertofifty++;
-                    if (countertofifty == 8)
-                    {
-                        solution += thetext[i];
-                        countertofifty = 0;
-                        richTextBoxHebrew.Select(i, 1);
-                        richTextBoxHebrew.SelectionColor = Color.Red;
-                        richTextBoxHebrewConcise.Select(i - nothebrewcharacters, 1);
-                        richTextBoxHebrewConcise.SelectionColor = Color.Red;
-
-                    }
-
-                }
-                // https://en.wikipedia.org/wiki/Unicode_and_HTML_for_the_Hebrew_alphabet
-                if (thetext[i] == '\x05D9' && firstjodfound == false)
-                {
-                    firstjodfound = true;
-                    solution += thetext[i];
-                    richTextBoxHebrew.Select(i, 1);
-                    richTextBoxHebrew.SelectionColor = Color.Red;
-                    richTextBoxHebrewConcise.Select(i - nothebrewcharacters, 1);
-                    richTextBoxHebrewConcise.SelectionColor = Color.Red;
-
-                }
-                if (thetext[i] < '\x05D0')
-                {
-                    nothebrewcharacters = nothebrewcharacters + 1;
-
-                }
-                if (solution.Length > 3)
-                {
-                    break;
-                }
-            }
-
-            richTextBox2.Text = solution;
-
-        }
-
-        private void FirstHeandEarlier50_Click(object sender, EventArgs e)
-        {
-            //So we have to go backward...
-            string thetext = richTextBoxHebrew.Text;
-            string answer = "";
-            string solution = "";
-            string hebrewconsise = "";
-
-            bool firsthefound = false;
-            int countertofifty = 0;
-            int nothebrewcharacters = 0;
-            string ii;
-            for (int i = 0; i < thetext.Length; i++)
-            {
-                if (thetext[i] > '\x05CF')
-                {
-                    hebrewconsise += thetext[i];
-                }
-            }
-            // richTextBoxHebrewConcise.Text = hebrewconsise;
-            // File.WriteAllText("c:\\intel\\text.rft", hebrewconsise);
-
-
-            for (int i = 0; i < thetext.Length; i++)
-            //for (int i = 0; i < hebrewconsise.Length; i++)
-            {
-                ii = thetext[i].ToString();
-                answer += ((int)thetext[i]) + " ";
-
-
-                if (firsthefound == true && thetext[i] > '\x05CF')
-                {
-                    richTextBoxDebug.Text = thetext[i] + " " + thetext[i];
-                    countertofifty++;
-                    if (countertofifty == 50)
-                    {
-                        solution += thetext[i];
-                        countertofifty = 0;
-                        richTextBoxHebrew.Select(i, 1);
-                        richTextBoxHebrew.SelectionColor = Color.Red;
-                        richTextBoxHebrewConcise.Select(i - nothebrewcharacters, 1);
-                        richTextBoxHebrewConcise.SelectionColor = Color.Red;
-
-                    }
-
-                }
-                // https://en.wikipedia.org/wiki/Unicode_and_HTML_for_the_Hebrew_alphabet
-                if (thetext[i] == 'N' && firsthefound == false)
-                {
-                    firsthefound = true;
-                    solution += thetext[i];
-                    richTextBoxHebrew.Select(i, 1);
-                    richTextBoxHebrew.SelectionColor = Color.Red;
-                    richTextBoxHebrewConcise.Select(i - nothebrewcharacters, 1);
-                    richTextBoxHebrewConcise.SelectionColor = Color.Red;
-
-                }
-                if (thetext[i] < '\x05D0')
-                {
-                    nothebrewcharacters = nothebrewcharacters + 1;
-
-                }
-                if (solution.Length > 3)
-                {
-                    break;
-                }
-            }
-
-            richTextBox2.Text = solution;
-
-        }
-
-
-        private void richTextBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            richTextBoxHebrew.LoadFile("Levicitus.rtf", RichTextBoxStreamType.RichText);
-        }
-
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            string thetext = richTextBoxHebrew.Text;
-            int counter = 0;
-
-            for (int i = 0; i < thetext.Length; i++)
-            {
-                // https://en.wikipedia.org/wiki/Unicode_and_HTML_for_the_Hebrew_alphabet
-                if (thetext[i] > '\x05CF')
-                {
-                    counter++;
-                    richTextBoxHebrew.Select(i, 1);
-                    richTextBoxHebrew.SelectionColor = Color.Red;
-                }
-            }
-
-            richTextBox2.Text = counter.ToString();
+            BibleSearch("Lev 1:1", '\x05D9', 1, 8);
         }
 
 
@@ -303,7 +68,7 @@ namespace BibleCode
         }
 
 
-        private void alltavs_Click(object sender, EventArgs e)
+        private void Alltavs_Click(object sender, EventArgs e)
         {
             string thetext = richTextBoxHebrewConcise.Text;
             string solution = "";
@@ -349,16 +114,138 @@ namespace BibleCode
 
         }
 
-        private void numberoftavs_Click(object sender, EventArgs e)
+        private void BibleSearch(string searchfromverse, char searchforcharacter, int xthcharacter, int searchdistance)
         {
+            string thetext = richTextBoxHebrew.Text;
+            string solution = "";
+            string hebrewconsise = "";
 
+            int countertosearchdistance = 0;
+            int nothebrewcharacters = 0;
+            for (int i = 0; i < thetext.Length; i++)
+            {
+                if (thetext[i] > '\x05CF')
+                {
+                    hebrewconsise += thetext[i];
+                }
+            }
+            // richTextBoxHebrewConcise.Text = hebrewconsise;
+            File.WriteAllText("c:\\intel\\text.rft", hebrewconsise);
+
+            int startpoint;
+            int fred = 0;
+            // Find the start bible verse
+            if (thetext.Contains(searchfromverse))
+            {
+                startpoint = thetext.IndexOf(searchfromverse);
+                richTextBoxHebrew.Select(startpoint, 5);
+                richTextBoxHebrew.SelectionColor = Color.DarkGreen;
+                for (int textcounter = 0; textcounter < startpoint; textcounter++)
+                {
+                    if (thetext[textcounter] < '\x05D0')
+                    {
+                        nothebrewcharacters++;
+
+                    }
+                }
+                // Find the character to search for in the text
+                int xthcharacterfound = 0;
+                for (int i = startpoint; i < thetext.Length; i++)
+                {
+                    if (thetext[i] == searchforcharacter)
+                    {
+                        xthcharacterfound++;
+                        if (xthcharacterfound == xthcharacter)
+                        {
+                            solution += thetext[i];
+                            richTextBoxHebrew.Select(i, 1);
+                            richTextBoxHebrew.SelectionColor = Color.Red;
+                            richTextBoxHebrewConcise.Select(i - nothebrewcharacters, 1);
+                            richTextBoxHebrewConcise.SelectionColor = Color.Red;
+                            fred = i + 1;
+                            break;
+                        }
+                    }
+                    if (thetext[i] < '\x05D0')
+                    {
+                        nothebrewcharacters++;
+                    }
+                }
+                // https://en.wikipedia.org/wiki/Unicode_and_HTML_for_the_Hebrew_alphabet
+
+
+            }
+            else
+            {
+                richTextBoxDebug.Text = "verse not found";
+            }
+            int endofreading;
+            {
+                endofreading = thetext.Length;
+
+                for (int textcounter = fred; textcounter < endofreading; textcounter++)
+                {
+
+
+                    if (thetext[textcounter] > '\x05CF')
+                    {
+                        richTextBoxDebug.Text = thetext[textcounter] + " " + thetext[textcounter];
+                        countertosearchdistance++;
+
+                        if (countertosearchdistance == searchdistance)
+                        {
+                            solution += thetext[textcounter];
+                            countertosearchdistance = 0;
+                            richTextBoxHebrew.Select(textcounter, 1);
+                            richTextBoxHebrew.SelectionColor = Color.Red;
+                            richTextBoxHebrewConcise.Select(textcounter - nothebrewcharacters, 1);
+                            richTextBoxHebrewConcise.SelectionColor = Color.Red;
+
+                        }
+
+                    }
+                    // https://en.wikipedia.org/wiki/Unicode_and_HTML_for_the_Hebrew_alphabet
+                    //if (thetext[textcounter] == searchforcharacter && firstcharacter == false)
+                    //{
+                    //    firstcharacter = true;
+                    //    solution += thetext[textcounter];
+                    //    richTextBoxHebrew.Select(textcounter, 1);
+                    //    richTextBoxHebrew.SelectionColor = Color.Red;
+                    //    richTextBoxHebrewConcise.Select(textcounter - nothebrewcharacters, 1);
+                    //    richTextBoxHebrewConcise.SelectionColor = Color.Red;
+
+
+                    //}
+
+
+                    if (thetext[textcounter] < '\x05D0')
+                    {
+                        nothebrewcharacters++;
+
+                    }
+                    if (solution.Length > 3)
+                    {
+                        break;
+                    }
+                }
+
+
+            }
+
+            richTextBox2.Text = solution;
+
+        }
+
+
+        private void CountCharacter(char chartocount)
+        {
             string thetext = richTextBoxHebrew.Text;
             int counter = 0;
 
             for (int i = 0; i < thetext.Length; i++)
             {
                 // https://en.wikipedia.org/wiki/Unicode_and_HTML_for_the_Hebrew_alphabet
-                if (thetext[i] == '\x05EA')
+                if (thetext[i] == chartocount)
                 {
                     counter++;
                     richTextBoxHebrew.Select(i, 1);
@@ -369,7 +256,32 @@ namespace BibleCode
             richTextBox2.Text = counter.ToString();
         }
 
-        private void numberofvavs_Click(object sender, EventArgs e)
+        private void NumberOfVavs_Click(object sender, EventArgs e)
+        {
+            CountCharacter('\x05D5');
+        }
+
+        private void NumberOfReesh_Click(object sender, EventArgs e)
+        {
+            CountCharacter('\x05E8');
+        }
+
+        private void NumberOfHe_Click(object sender, EventArgs e)
+        {
+            CountCharacter('\x05D4');
+        }
+
+        private void NumberOfTavs_Click(object sender, EventArgs e)
+        {
+            CountCharacter('\x05EA');
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+            BibleSearch(txtSearchFromVerse.Text, txtSearchChar.Text[0], int.Parse(txtXthCharacter.Text), int.Parse(txtSearchDistance.Text));
+        }
+
+        private void NumberOfChars_Click(object sender, EventArgs e)
         {
             string thetext = richTextBoxHebrew.Text;
             int counter = 0;
@@ -377,7 +289,7 @@ namespace BibleCode
             for (int i = 0; i < thetext.Length; i++)
             {
                 // https://en.wikipedia.org/wiki/Unicode_and_HTML_for_the_Hebrew_alphabet
-                if (thetext[i] == '\x05D5')
+                if (thetext[i] > '\x05CF')
                 {
                     counter++;
                     richTextBoxHebrew.Select(i, 1);
@@ -388,43 +300,9 @@ namespace BibleCode
             richTextBox2.Text = counter.ToString();
         }
 
-        private void numberofreesh_Click(object sender, EventArgs e)
+        private void label7_Click(object sender, EventArgs e)
         {
-            string thetext = richTextBoxHebrew.Text;
-            int counter = 0;
 
-            for (int i = 0; i < thetext.Length; i++)
-            {
-                // https://en.wikipedia.org/wiki/Unicode_and_HTML_for_the_Hebrew_alphabet
-                if (thetext[i] == '\x05E8')
-                {
-                    counter++;
-                    richTextBoxHebrew.Select(i, 1);
-                    richTextBoxHebrew.SelectionColor = Color.Red;
-                }
-            }
-
-            richTextBox2.Text = counter.ToString();
         }
-
-        private void numberofhe_Click(object sender, EventArgs e)
-        {
-            string thetext = richTextBoxHebrew.Text;
-            int counter = 0;
-
-            for (int i = 0; i < thetext.Length; i++)
-            {
-                // https://en.wikipedia.org/wiki/Unicode_and_HTML_for_the_Hebrew_alphabet
-                if (thetext[i] == '\x05D4')
-                {
-                    counter++;
-                    richTextBoxHebrew.Select(i, 1);
-                    richTextBoxHebrew.SelectionColor = Color.Red;
-                }
-            }
-
-            richTextBox2.Text = counter.ToString();
-        }
-
     }
 }
