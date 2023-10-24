@@ -5,36 +5,18 @@ using System.Windows.Forms;
 
 namespace BibleCode
 {
-    public partial class Form1 : Form
+    public partial class BibleCode : Form
     {
-        public Form1()
+        public BibleCode()
         {
             InitializeComponent();
-            // public char searchtext = '\x05EA';
-            richTextBoxHebrew.LoadFile("Genesis.rtf", RichTextBoxStreamType.RichText);
-            richTextBoxHebrewConcise.LoadFile("GenesisConcise.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrew.LoadFile("Numbers.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrewConcise.LoadFile("NumbersConcise.rtf", RichTextBoxStreamType.RichText);
             txtSearchFromVerse.Text = "Num 1:1";
             txtSearchChar.Text = '\x05D4'.ToString();
-            txtXthCharacter.Text = 1.ToString();
+            txtXthCharacter.Text = 3.ToString();
             txtSearchDistance.Text = 50.ToString();
         }
-
-
-        private void Firsttavandfifty_Click(object sender, EventArgs e)
-        {
-            txtSearchFromVerse.Text = "Gen 1:1";
-            txtSearchChar.Text = '\x05EA'.ToString();
-            txtXthCharacter.Text = 1.ToString();
-            txtSearchDistance.Text = 50.ToString();
-            BibleSearch("Gen 1:1", '\x05EA', 1, 50);
-        }
-
-
-        private void JahWeh_Click(object sender, EventArgs e)
-        {
-            BibleSearch("Lev 1:1", '\x05D9', 1, 8);
-        }
-
 
         private void Genesis_Click(object sender, EventArgs e)
         {
@@ -51,7 +33,7 @@ namespace BibleCode
         private void Leviticus_Click(object sender, EventArgs e)
         {
             richTextBoxHebrew.LoadFile("Leviticus.rtf", RichTextBoxStreamType.RichText);
-            richTextBoxHebrewConcise.LoadFile("LevConcise.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrewConcise.LoadFile("LeviticusConcise.rtf", RichTextBoxStreamType.RichText);
         }
 
         private void Numbers_Click(object sender, EventArgs e)
@@ -59,7 +41,6 @@ namespace BibleCode
             richTextBoxHebrew.LoadFile("Numbers.rtf", RichTextBoxStreamType.RichText);
             richTextBoxHebrewConcise.LoadFile("NumbersConcise.rtf", RichTextBoxStreamType.RichText);
         }
-
 
         private void Deuteronomy_Click(object sender, EventArgs e)
         {
@@ -110,12 +91,11 @@ namespace BibleCode
                 }
             }
             richTextBox2.Text = solution + tohracounter.ToString();
-
-
         }
-
         private void BibleSearch(string searchfromverse, char searchforcharacter, int xthcharacter, int searchdistance)
         {
+            int consizesize = (int)(searchdistance * 8.5);
+            richTextBoxHebrewConcise.Size = new System.Drawing.Size(consizesize, 96);
             string thetext = richTextBoxHebrew.Text;
             string solution = "";
             string hebrewconsise = "";
@@ -129,11 +109,10 @@ namespace BibleCode
                     hebrewconsise += thetext[i];
                 }
             }
-            // richTextBoxHebrewConcise.Text = hebrewconsise;
             File.WriteAllText("c:\\intel\\text.rft", hebrewconsise);
 
             int startpoint;
-            int fred = 0;
+            int textpointer = 0;
             // Find the start bible verse
             if (thetext.Contains(searchfromverse))
             {
@@ -149,6 +128,7 @@ namespace BibleCode
                     }
                 }
                 // Find the character to search for in the text
+                // https://en.wikipedia.org/wiki/Unicode_and_HTML_for_the_Hebrew_alphabet
                 int xthcharacterfound = 0;
                 for (int i = startpoint; i < thetext.Length; i++)
                 {
@@ -162,7 +142,7 @@ namespace BibleCode
                             richTextBoxHebrew.SelectionColor = Color.Red;
                             richTextBoxHebrewConcise.Select(i - nothebrewcharacters, 1);
                             richTextBoxHebrewConcise.SelectionColor = Color.Red;
-                            fred = i + 1;
+                            textpointer = i + 1;
                             break;
                         }
                     }
@@ -171,9 +151,6 @@ namespace BibleCode
                         nothebrewcharacters++;
                     }
                 }
-                // https://en.wikipedia.org/wiki/Unicode_and_HTML_for_the_Hebrew_alphabet
-
-
             }
             else
             {
@@ -183,7 +160,7 @@ namespace BibleCode
             {
                 endofreading = thetext.Length;
 
-                for (int textcounter = fred; textcounter < endofreading; textcounter++)
+                for (int textcounter = textpointer; textcounter < endofreading; textcounter++)
                 {
 
 
@@ -204,20 +181,6 @@ namespace BibleCode
                         }
 
                     }
-                    // https://en.wikipedia.org/wiki/Unicode_and_HTML_for_the_Hebrew_alphabet
-                    //if (thetext[textcounter] == searchforcharacter && firstcharacter == false)
-                    //{
-                    //    firstcharacter = true;
-                    //    solution += thetext[textcounter];
-                    //    richTextBoxHebrew.Select(textcounter, 1);
-                    //    richTextBoxHebrew.SelectionColor = Color.Red;
-                    //    richTextBoxHebrewConcise.Select(textcounter - nothebrewcharacters, 1);
-                    //    richTextBoxHebrewConcise.SelectionColor = Color.Red;
-
-
-                    //}
-
-
                     if (thetext[textcounter] < '\x05D0')
                     {
                         nothebrewcharacters++;
@@ -228,14 +191,9 @@ namespace BibleCode
                         break;
                     }
                 }
-
-
             }
-
             richTextBox2.Text = solution;
-
         }
-
 
         private void CountCharacter(char chartocount)
         {
@@ -296,13 +254,7 @@ namespace BibleCode
                     richTextBoxHebrew.SelectionColor = Color.Red;
                 }
             }
-
             richTextBox2.Text = counter.ToString();
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

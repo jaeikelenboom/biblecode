@@ -51,7 +51,6 @@ C:\git\BibleCode\bin\Debug\net6.0-windows\BibleCode.deps.json
 C:\git\BibleCode\bin\Debug\net6.0-windows\BibleCode.runtimeconfig.json
 C:\git\BibleCode\bin\Debug\net6.0-windows\BibleCode.dll
 C:\git\BibleCode\bin\Debug\net6.0-windows\BibleCode.pdb
-C:\git\BibleCode\obj\Debug\net6.0-windows\BibleCode.Form1.resources
 C:\git\BibleCode\obj\Debug\net6.0-windows\BibleCode.csproj.GenerateResource.cache
 C:\git\BibleCode\obj\Debug\net6.0-windows\BibleCode.GeneratedMSBuildEditorConfig.editorconfig
 C:\git\BibleCode\obj\Debug\net6.0-windows\BibleCode.AssemblyInfoInputs.cache
@@ -62,3 +61,4 @@ C:\git\BibleCode\obj\Debug\net6.0-windows\refint\BibleCode.dll
 C:\git\BibleCode\obj\Debug\net6.0-windows\BibleCode.pdb
 C:\git\BibleCode\obj\Debug\net6.0-windows\BibleCode.genruntimeconfig.cache
 C:\git\BibleCode\obj\Debug\net6.0-windows\ref\BibleCode.dll
+C:\git\BibleCode\obj\Debug\net6.0-windows\BibleCode.BibleCode.resources
