@@ -94,6 +94,8 @@ namespace BibleCode
         }
         private void BibleSearch(string searchfromverse, char searchforcharacter, int xthcharacter, int searchdistance)
         {
+            int consizesize = (int)(searchdistance * 8.5);
+            richTextBoxHebrewConcise.Size = new System.Drawing.Size(consizesize, 96);
             string thetext = richTextBoxHebrew.Text;
             string solution = "";
             string hebrewconsise = "";
