@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace BibleCode
 {
-    public partial class Form1 : Form
+    public partial class BibleCode : Form
     {
-        public Form1()
+        public BibleCode()
         {
             InitializeComponent();
             richTextBoxHebrew.LoadFile("Numbers.rtf", RichTextBoxStreamType.RichText);
