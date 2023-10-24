@@ -4,3 +4,4 @@
 *.exe
 *.cache
 .vs/*
+*.editorconfig

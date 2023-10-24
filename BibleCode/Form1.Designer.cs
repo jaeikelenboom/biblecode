@@ -30,7 +30,6 @@
         {
             richTextBoxHebrew = new RichTextBox();
             richTextBox2 = new RichTextBox();
-            btnFirstTav = new Button();
             richTextBoxDebug = new RichTextBox();
             button1 = new Button();
             button2 = new Button();
@@ -44,7 +43,6 @@
             button9 = new Button();
             button10 = new Button();
             button11 = new Button();
-            button13 = new Button();
             txtSearchFromVerse = new TextBox();
             label1 = new Label();
             label2 = new Label();
@@ -82,16 +80,6 @@
             richTextBox2.Size = new Size(457, 158);
             richTextBox2.TabIndex = 4;
             richTextBox2.Text = "";
-            // 
-            // btnFirstTav
-            // 
-            btnFirstTav.Location = new Point(556, 314);
-            btnFirstTav.Name = "btnFirstTav";
-            btnFirstTav.Size = new Size(189, 23);
-            btnFirstTav.TabIndex = 5;
-            btnFirstTav.Text = "First Tav and next 50 chars";
-            btnFirstTav.UseVisualStyleBackColor = true;
-            btnFirstTav.Click += Firsttavandfifty_Click;
             // 
             // richTextBoxDebug
             // 
@@ -223,16 +211,6 @@
             button11.UseVisualStyleBackColor = true;
             button11.Click += NumberOfHe_Click;
             // 
-            // button13
-            // 
-            button13.Location = new Point(556, 361);
-            button13.Name = "button13";
-            button13.Size = new Size(178, 23);
-            button13.TabIndex = 20;
-            button13.Text = "JahWeh";
-            button13.UseVisualStyleBackColor = true;
-            button13.Click += JahWeh_Click;
-            // 
             // txtSearchFromVerse
             // 
             txtSearchFromVerse.Location = new Point(652, 42);
@@ -333,7 +311,6 @@
             label7.Size = new Size(131, 15);
             label7.TabIndex = 34;
             label7.Text = "Exodus: Exo 1:1 tav 1 50";
-            label7.Click += label7_Click;
             // 
             // label8
             // 
@@ -392,7 +369,6 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(txtSearchFromVerse);
-            Controls.Add(button13);
             Controls.Add(button11);
             Controls.Add(button10);
             Controls.Add(button9);
@@ -406,7 +382,6 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(richTextBoxDebug);
-            Controls.Add(btnFirstTav);
             Controls.Add(richTextBox2);
             Controls.Add(richTextBoxHebrew);
             Name = "Form1";
@@ -423,7 +398,6 @@
         #endregion
         private RichTextBox richTextBoxHebrew;
         private RichTextBox richTextBox2;
-        private Button btnFirstTav;
         private RichTextBox richTextBoxDebug;
         private Button button1;
         private Button button2;
@@ -437,7 +411,6 @@
         private Button button9;
         private Button button10;
         private Button button11;
-        private Button button13;
         private TextBox txtSearchFromVerse;
         private Label label1;
         private Label label2;
