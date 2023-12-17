@@ -17,34 +17,36 @@ namespace BibleCode
             txtXthCharacter.Text = 3.ToString();
             txtSearchDistance.Text = 50.ToString();
 
-            List<Item> items = new List<Item>();
-            items.Add(new Item() { Text = "Alef", Value = '\x05D0' });
-            items.Add(new Item() { Text = "Bet", Value = '\x05D1' });
-            items.Add(new Item() { Text = "Gimel", Value = '\x05D2' });
-            items.Add(new Item() { Text = "Dalet", Value = '\x05D3' });
-            items.Add(new Item() { Text = "He", Value = '\x05D4' });
-            items.Add(new Item() { Text = "Vav", Value = '\x05D5' });
-            items.Add(new Item() { Text = "Zayin", Value = '\x05D6' });
-            items.Add(new Item() { Text = "Het", Value = '\x05D7' });
-            items.Add(new Item() { Text = "Tet", Value = '\x05D8' });
-            items.Add(new Item() { Text = "Yod", Value = '\x05D9' });
-            items.Add(new Item() { Text = "Final Kaf", Value = '\x05DA' });
-            items.Add(new Item() { Text = "Kaf", Value = '\x05DB' });
-            items.Add(new Item() { Text = "Lamed", Value = '\x05DC' });
-            items.Add(new Item() { Text = "Final Mem", Value = '\x05DD' });
-            items.Add(new Item() { Text = "Mem", Value = '\x05DE' });
-            items.Add(new Item() { Text = "Final Nun", Value = '\x05DF' });
-            items.Add(new Item() { Text = "Nun", Value = '\x05E0' });
-            items.Add(new Item() { Text = "Samekh", Value = '\x05E1' });
-            items.Add(new Item() { Text = "Ayin", Value = '\x05E2' });
-            items.Add(new Item() { Text = "Final Pe", Value = '\x05E3' });
-            items.Add(new Item() { Text = "Pe", Value = '\x05E4' });
-            items.Add(new Item() { Text = "Final Tsadi", Value = '\x05E5' });
-            items.Add(new Item() { Text = "Tsadi", Value = '\x05E6' });
-            items.Add(new Item() { Text = "Qof", Value = '\x05E7' });
-            items.Add(new Item() { Text = "Resh", Value = '\x05E8' });
-            items.Add(new Item() { Text = "Sjin", Value = '\x05E9' });
-            items.Add(new Item() { Text = "Tav", Value = '\x05EA' });
+            List<Item> items = new()
+            {
+                new Item() { Text = "Alef", Value = '\x05D0' },
+                new Item() { Text = "Bet", Value = '\x05D1' },
+                new Item() { Text = "Gimel", Value = '\x05D2' },
+                new Item() { Text = "Dalet", Value = '\x05D3' },
+                new Item() { Text = "He", Value = '\x05D4' },
+                new Item() { Text = "Vav", Value = '\x05D5' },
+                new Item() { Text = "Zayin", Value = '\x05D6' },
+                new Item() { Text = "Het", Value = '\x05D7' },
+                new Item() { Text = "Tet", Value = '\x05D8' },
+                new Item() { Text = "Yod", Value = '\x05D9' },
+                new Item() { Text = "Final Kaf", Value = '\x05DA' },
+                new Item() { Text = "Kaf", Value = '\x05DB' },
+                new Item() { Text = "Lamed", Value = '\x05DC' },
+                new Item() { Text = "Final Mem", Value = '\x05DD' },
+                new Item() { Text = "Mem", Value = '\x05DE' },
+                new Item() { Text = "Final Nun", Value = '\x05DF' },
+                new Item() { Text = "Nun", Value = '\x05E0' },
+                new Item() { Text = "Samekh", Value = '\x05E1' },
+                new Item() { Text = "Ayin", Value = '\x05E2' },
+                new Item() { Text = "Final Pe", Value = '\x05E3' },
+                new Item() { Text = "Pe", Value = '\x05E4' },
+                new Item() { Text = "Final Tsadi", Value = '\x05E5' },
+                new Item() { Text = "Tsadi", Value = '\x05E6' },
+                new Item() { Text = "Qof", Value = '\x05E7' },
+                new Item() { Text = "Resh", Value = '\x05E8' },
+                new Item() { Text = "Sjin", Value = '\x05E9' },
+                new Item() { Text = "Tav", Value = '\x05EA' }
+            };
 
             comboBox1.DataSource = items;
             comboBox1.DisplayMember = "Text";
@@ -54,7 +56,7 @@ namespace BibleCode
 
         public class Item
         {
-            public Item() { }
+            public Item() { Text = "Tav"; Value = '\x05EA'; }
 
             public char Value { set; get; }
             public string Text { set; get; }
@@ -87,6 +89,14 @@ namespace BibleCode
         {
             richTextBoxHebrew.LoadFile("Deuteronomy.rtf", RichTextBoxStreamType.RichText);
             richTextBoxHebrewConcise.LoadFile("DeuteronomyConcise.rtf", RichTextBoxStreamType.RichText);
+        }
+
+
+        private void Thora_Click(object sender, EventArgs e)
+        {
+            richTextBoxHebrew.LoadFile("Thora.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrewConcise.LoadFile("ThoraConcise.rtf", RichTextBoxStreamType.RichText);
+
         }
 
 
@@ -135,11 +145,9 @@ namespace BibleCode
         }
         private void BibleSearch(string searchfromverse, char searchforcharacter, int xthcharacter, int searchdistance)
         {
-            int consizesize = (int)(searchdistance * 8.5);
-            if (searchdistance == 8)
-                consizesize = 92;
+            int consizesize = (int)(searchdistance * 8) + 28;
 
-            richTextBoxHebrewConcise.Size = new System.Drawing.Size(consizesize, 96);
+            richTextBoxHebrewConcise.Size = new System.Drawing.Size(consizesize, 176);
             string thetext = richTextBoxHebrew.Text;
             string solution = "";
             string hebrewconsise = "";
@@ -278,8 +286,7 @@ namespace BibleCode
         {
             bool valuesOK = true;
             Item fred = (Item)comboBox1.SelectedItem;
-            int xthcharacter;
-            bool succes = int.TryParse(txtXthCharacter.Text, out xthcharacter);
+            bool succes = int.TryParse(txtXthCharacter.Text, out int xthcharacter);
             if (!succes)
             {
                 richTextBox2.Text = "Xth Character field is not numeric";
@@ -290,8 +297,7 @@ namespace BibleCode
                 richTextBox2.Text = "Xth Character field cannot be 0 or negative";
                 valuesOK = false;
             }
-            int searchdistance;
-            succes = int.TryParse(txtSearchDistance.Text, out searchdistance);
+            succes = int.TryParse(txtSearchDistance.Text, out int searchdistance);
             if (!succes)
             {
                 richTextBox2.Text = "Search distance is not numberic is not numeric";
@@ -324,9 +330,10 @@ namespace BibleCode
             }
             richTextBox2.Text = counter.ToString();
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
     }
 }
