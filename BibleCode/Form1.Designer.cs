@@ -62,11 +62,12 @@
             contextMenuStrip2 = new ContextMenuStrip(components);
             menuStrip2 = new MenuStrip();
             comboBox1 = new ComboBox();
+            Thora = new Button();
             SuspendLayout();
             // 
             // richTextBoxHebrew
             // 
-            richTextBoxHebrew.Font = new Font("Dubai", 17.95F, FontStyle.Regular, GraphicsUnit.Point);
+            richTextBoxHebrew.Font = new Font("Dubai", 80F, FontStyle.Regular, GraphicsUnit.Point);
             richTextBoxHebrew.Location = new Point(23, 90);
             richTextBoxHebrew.Name = "richTextBoxHebrew";
             richTextBoxHebrew.RightToLeft = RightToLeft.Yes;
@@ -77,7 +78,7 @@
             // richTextBox2
             // 
             richTextBox2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            richTextBox2.Location = new Point(23, 489);
+            richTextBox2.Location = new Point(23, 638);
             richTextBox2.Name = "richTextBox2";
             richTextBox2.RightToLeft = RightToLeft.Yes;
             richTextBox2.Size = new Size(457, 158);
@@ -96,7 +97,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(116, 61);
+            button2.Location = new Point(104, 61);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 8;
@@ -106,7 +107,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(197, 61);
+            button3.Location = new Point(185, 61);
             button3.Name = "button3";
             button3.Size = new Size(75, 23);
             button3.TabIndex = 9;
@@ -116,7 +117,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(287, 61);
+            button4.Location = new Point(266, 61);
             button4.Name = "button4";
             button4.Size = new Size(75, 23);
             button4.TabIndex = 10;
@@ -126,7 +127,7 @@
             // 
             // button5
             // 
-            button5.Location = new Point(384, 61);
+            button5.Location = new Point(347, 61);
             button5.Name = "button5";
             button5.Size = new Size(105, 23);
             button5.TabIndex = 11;
@@ -136,7 +137,7 @@
             // 
             // button6
             // 
-            button6.Location = new Point(830, 445);
+            button6.Location = new Point(810, 590);
             button6.Name = "button6";
             button6.Size = new Size(163, 23);
             button6.TabIndex = 12;
@@ -146,7 +147,7 @@
             // 
             // btnNumberOfChars
             // 
-            btnNumberOfChars.Location = new Point(830, 405);
+            btnNumberOfChars.Location = new Point(810, 540);
             btnNumberOfChars.Name = "btnNumberOfChars";
             btnNumberOfChars.Size = new Size(273, 23);
             btnNumberOfChars.TabIndex = 13;
@@ -156,17 +157,17 @@
             // 
             // richTextBoxHebrewConcise
             // 
-            richTextBoxHebrewConcise.Font = new Font("Dubai", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            richTextBoxHebrewConcise.Location = new Point(23, 332);
+            richTextBoxHebrewConcise.Font = new Font("Dubai", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            richTextBoxHebrewConcise.Location = new Point(23, 349);
             richTextBoxHebrewConcise.Name = "richTextBoxHebrewConcise";
             richTextBoxHebrewConcise.RightToLeft = RightToLeft.Yes;
-            richTextBoxHebrewConcise.Size = new Size(425, 96);
+            richTextBoxHebrewConcise.Size = new Size(425, 176);
             richTextBoxHebrewConcise.TabIndex = 14;
             richTextBoxHebrewConcise.Text = "";
             // 
             // button8
             // 
-            button8.Location = new Point(556, 600);
+            button8.Location = new Point(549, 638);
             button8.Name = "button8";
             button8.Size = new Size(166, 23);
             button8.TabIndex = 15;
@@ -176,7 +177,7 @@
             // 
             // button9
             // 
-            button9.Location = new Point(830, 500);
+            button9.Location = new Point(810, 649);
             button9.Name = "button9";
             button9.Size = new Size(163, 23);
             button9.TabIndex = 16;
@@ -186,7 +187,7 @@
             // 
             // button10
             // 
-            button10.Location = new Point(830, 555);
+            button10.Location = new Point(810, 707);
             button10.Name = "button10";
             button10.Size = new Size(163, 23);
             button10.TabIndex = 17;
@@ -196,7 +197,7 @@
             // 
             // button11
             // 
-            button11.Location = new Point(830, 612);
+            button11.Location = new Point(810, 773);
             button11.Name = "button11";
             button11.Size = new Size(163, 23);
             button11.TabIndex = 18;
@@ -206,7 +207,7 @@
             // 
             // txtSearchFromVerse
             // 
-            txtSearchFromVerse.Location = new Point(556, 134);
+            txtSearchFromVerse.Location = new Point(553, 90);
             txtSearchFromVerse.Name = "txtSearchFromVerse";
             txtSearchFromVerse.Size = new Size(100, 23);
             txtSearchFromVerse.TabIndex = 21;
@@ -214,7 +215,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(556, 90);
+            label1.Location = new Point(556, 65);
             label1.Name = "label1";
             label1.Size = new Size(97, 15);
             label1.TabIndex = 22;
@@ -223,7 +224,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(692, 90);
+            label2.Location = new Point(683, 65);
             label2.Name = "label2";
             label2.Size = new Size(67, 15);
             label2.TabIndex = 23;
@@ -232,7 +233,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(926, 90);
+            label4.Location = new Point(950, 69);
             label4.Name = "label4";
             label4.Size = new Size(87, 15);
             label4.TabIndex = 26;
@@ -240,14 +241,14 @@
             // 
             // txtSearchDistance
             // 
-            txtSearchDistance.Location = new Point(926, 134);
+            txtSearchDistance.Location = new Point(950, 90);
             txtSearchDistance.Name = "txtSearchDistance";
             txtSearchDistance.Size = new Size(100, 23);
             txtSearchDistance.TabIndex = 28;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(556, 174);
+            btnSearch.Location = new Point(553, 137);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(75, 23);
             btnSearch.TabIndex = 29;
@@ -258,7 +259,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(797, 90);
+            label3.Location = new Point(824, 65);
             label3.Name = "label3";
             label3.Size = new Size(114, 15);
             label3.TabIndex = 30;
@@ -266,7 +267,7 @@
             // 
             // txtXthCharacter
             // 
-            txtXthCharacter.Location = new Point(797, 134);
+            txtXthCharacter.Location = new Point(824, 90);
             txtXthCharacter.Name = "txtXthCharacter";
             txtXthCharacter.Size = new Size(100, 23);
             txtXthCharacter.TabIndex = 31;
@@ -274,7 +275,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(556, 249);
+            label6.Location = new Point(553, 202);
             label6.Name = "label6";
             label6.Size = new Size(135, 15);
             label6.TabIndex = 33;
@@ -283,7 +284,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(556, 277);
+            label7.Location = new Point(556, 229);
             label7.Name = "label7";
             label7.Size = new Size(131, 15);
             label7.TabIndex = 34;
@@ -292,7 +293,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(555, 313);
+            label8.Location = new Point(556, 258);
             label8.Name = "label8";
             label8.Size = new Size(136, 15);
             label8.TabIndex = 35;
@@ -301,7 +302,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(556, 343);
+            label9.Location = new Point(556, 289);
             label9.Name = "label9";
             label9.Size = new Size(147, 15);
             label9.TabIndex = 36;
@@ -310,7 +311,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(556, 379);
+            label10.Location = new Point(556, 322);
             label10.Name = "label10";
             label10.Size = new Size(159, 15);
             label10.TabIndex = 37;
@@ -319,7 +320,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(556, 213);
+            label11.Location = new Point(553, 172);
             label11.Name = "label11";
             label11.Size = new Size(355, 15);
             label11.TabIndex = 38;
@@ -354,17 +355,28 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(667, 134);
+            comboBox1.Location = new Point(683, 87);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 43;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
+            // 
+            // Thora
+            // 
+            Thora.Location = new Point(458, 61);
+            Thora.Name = "Thora";
+            Thora.Size = new Size(75, 23);
+            Thora.TabIndex = 44;
+            Thora.Text = "Thora";
+            Thora.UseVisualStyleBackColor = true;
+            Thora.Click += Thora_Click;
             // 
             // BibleCode
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1168, 706);
+            ClientSize = new Size(1168, 859);
+            Controls.Add(Thora);
             Controls.Add(comboBox1);
             Controls.Add(label11);
             Controls.Add(label10);
@@ -442,5 +454,6 @@
         private ContextMenuStrip contextMenuStrip2;
         private MenuStrip menuStrip2;
         private ComboBox comboBox1;
+        private Button Thora;
     }
 }
