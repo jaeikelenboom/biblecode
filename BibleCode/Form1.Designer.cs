@@ -63,6 +63,8 @@
             menuStrip2 = new MenuStrip();
             comboBox1 = new ComboBox();
             Thora = new Button();
+            txtNumberofCharacters = new TextBox();
+            label5 = new Label();
             SuspendLayout();
             // 
             // richTextBoxHebrew
@@ -371,11 +373,30 @@
             Thora.UseVisualStyleBackColor = true;
             Thora.Click += Thora_Click;
             // 
+            // txtNumberofCharacters
+            // 
+            txtNumberofCharacters.Location = new Point(950, 172);
+            txtNumberofCharacters.Name = "txtNumberofCharacters";
+            txtNumberofCharacters.Size = new Size(100, 23);
+            txtNumberofCharacters.TabIndex = 45;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(950, 145);
+            label5.Name = "label5";
+            label5.Size = new Size(176, 15);
+            label5.TabIndex = 46;
+            label5.Text = "Number of characters to display";
+            label5.Click += label5_Click;
+            // 
             // BibleCode
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1168, 859);
+            Controls.Add(label5);
+            Controls.Add(txtNumberofCharacters);
             Controls.Add(Thora);
             Controls.Add(comboBox1);
             Controls.Add(label11);
@@ -455,5 +476,7 @@
         private MenuStrip menuStrip2;
         private ComboBox comboBox1;
         private Button Thora;
+        private TextBox txtNumberofCharacters;
+        private Label label5;
     }
 }

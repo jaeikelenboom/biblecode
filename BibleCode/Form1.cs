@@ -16,6 +16,7 @@ namespace BibleCode
             txtSearchFromVerse.Text = "Num 1:1";
             txtXthCharacter.Text = 3.ToString();
             txtSearchDistance.Text = 50.ToString();
+            txtNumberofCharacters.Text = 4.ToString();
 
             List<Item> items = new()
             {
@@ -143,7 +144,7 @@ namespace BibleCode
             }
             richTextBox2.Text = tohracounter.ToString() + " number of tavs and " + tavcounter.ToString() + " number of Tohras";
         }
-        private void BibleSearch(string searchfromverse, char searchforcharacter, int xthcharacter, int searchdistance)
+        private void BibleSearch(string searchfromverse, char searchforcharacter, int xthcharacter, int searchdistance, int numberofcharacters)
         {
             int consizesize = (int)(searchdistance * 8) + 28;
 
@@ -234,7 +235,7 @@ namespace BibleCode
                     {
                         nothebrewcharacters++;
                     }
-                    if (solution.Length > 3)
+                    if (solution.Length > (numberofcharacters-1))
                     {
                         break;
                     }
@@ -300,7 +301,7 @@ namespace BibleCode
             succes = int.TryParse(txtSearchDistance.Text, out int searchdistance);
             if (!succes)
             {
-                richTextBox2.Text = "Search distance is not numberic is not numeric";
+                richTextBox2.Text = "Search distance is not numberic";
                 valuesOK = false;
             }
             if (searchdistance < 1)
@@ -309,8 +310,19 @@ namespace BibleCode
                 valuesOK = false;
             }
 
+            succes = int.TryParse(txtNumberofCharacters.Text, out int numberOfCharacters);
+            if (!succes)
+            {
+                richTextBox2.Text = "Number of characters is not numeric";
+                valuesOK = false;
+            }
+            if (numberOfCharacters < 1)
+            {
+                richTextBox2.Text = "Number Of Characters cannot be 0 or negative";
+                valuesOK = false;
+            }
             if (valuesOK)
-                BibleSearch(txtSearchFromVerse.Text, fred.Value, xthcharacter, searchdistance);
+                BibleSearch(txtSearchFromVerse.Text, fred.Value, xthcharacter, searchdistance, numberOfCharacters);
         }
 
         private void NumberOfChars_Click(object sender, EventArgs e)
@@ -335,5 +347,9 @@ namespace BibleCode
 
         }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
