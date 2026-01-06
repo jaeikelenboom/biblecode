@@ -11,15 +11,15 @@ namespace BibleCode
         public BibleCode()
         {
             InitializeComponent();
-            richTextBoxHebrew.LoadFile("Numbers.rtf", RichTextBoxStreamType.RichText);
-            richTextBoxHebrewConcise.LoadFile("NumbersConcise.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrew.LoadFile("Moses\\Numbers.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrewConcise.LoadFile("Moses\\NumbersConcise.rtf", RichTextBoxStreamType.RichText);
             txtSearchFromVerse.Text = "Num 1:1";
             txtXthCharacter.Text = 3.ToString();
             txtSearchDistance.Text = 50.ToString();
             txtNumberofCharacters.Text = 4.ToString();
 
-            List<Item> items = new()
-            {
+            List<Item> items =
+            [
                 new Item() { Text = "Alef", Value = '\x05D0' },
                 new Item() { Text = "Bet", Value = '\x05D1' },
                 new Item() { Text = "Gimel", Value = '\x05D2' },
@@ -47,11 +47,13 @@ namespace BibleCode
                 new Item() { Text = "Resh", Value = '\x05E8' },
                 new Item() { Text = "Sjin", Value = '\x05E9' },
                 new Item() { Text = "Tav", Value = '\x05EA' }
-            };
+            ];
 
             comboBox1.DataSource = items;
             comboBox1.DisplayMember = "Text";
             comboBox1.ValueMember = "Value";
+            comboBox1.SelectedItem = null;
+            comboBox1.SelectedIndex = 4;
 
         }
 
@@ -64,39 +66,39 @@ namespace BibleCode
         }
         private void Genesis_Click(object sender, EventArgs e)
         {
-            richTextBoxHebrew.LoadFile("Genesis.rtf", RichTextBoxStreamType.RichText);
-            richTextBoxHebrewConcise.LoadFile("GenesisConcise.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrew.LoadFile("Moses\\Genesis.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrewConcise.LoadFile("Moses\\GenesisConcise.rtf", RichTextBoxStreamType.RichText);
         }
 
         private void Exodus_Click(object sender, EventArgs e)
         {
-            richTextBoxHebrew.LoadFile("Exodus.rtf", RichTextBoxStreamType.RichText);
-            richTextBoxHebrewConcise.LoadFile("ExodusConcise.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrew.LoadFile("Moses\\Exodus.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrewConcise.LoadFile("Moses\\ExodusConcise.rtf", RichTextBoxStreamType.RichText);
         }
 
         private void Leviticus_Click(object sender, EventArgs e)
         {
-            richTextBoxHebrew.LoadFile("Leviticus.rtf", RichTextBoxStreamType.RichText);
-            richTextBoxHebrewConcise.LoadFile("LeviticusConcise.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrew.LoadFile("Moses\\Leviticus.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrewConcise.LoadFile("Moses\\LeviticusConcise.rtf", RichTextBoxStreamType.RichText);
         }
 
         private void Numbers_Click(object sender, EventArgs e)
         {
-            richTextBoxHebrew.LoadFile("Numbers.rtf", RichTextBoxStreamType.RichText);
-            richTextBoxHebrewConcise.LoadFile("NumbersConcise.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrew.LoadFile("Moses\\Numbers.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrewConcise.LoadFile("Moses\\NumbersConcise.rtf", RichTextBoxStreamType.RichText);
         }
 
         private void Deuteronomy_Click(object sender, EventArgs e)
         {
-            richTextBoxHebrew.LoadFile("Deuteronomy.rtf", RichTextBoxStreamType.RichText);
-            richTextBoxHebrewConcise.LoadFile("DeuteronomyConcise.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrew.LoadFile("Moses\\Deuteronomy.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrewConcise.LoadFile("Moses\\DeuteronomyConcise.rtf", RichTextBoxStreamType.RichText);
         }
 
 
         private void Thora_Click(object sender, EventArgs e)
         {
-            richTextBoxHebrew.LoadFile("Thora.rtf", RichTextBoxStreamType.RichText);
-            richTextBoxHebrewConcise.LoadFile("ThoraConcise.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrew.LoadFile("Moses\\Thora.rtf", RichTextBoxStreamType.RichText);
+            richTextBoxHebrewConcise.LoadFile("Moses\\ThoraConcise.rtf", RichTextBoxStreamType.RichText);
 
         }
 
@@ -235,7 +237,7 @@ namespace BibleCode
                     {
                         nothebrewcharacters++;
                     }
-                    if (solution.Length > (numberofcharacters-1))
+                    if (solution.Length > (numberofcharacters - 1))
                     {
                         break;
                     }
@@ -286,7 +288,11 @@ namespace BibleCode
         private void Search_Click(object sender, EventArgs e)
         {
             bool valuesOK = true;
-            Item fred = (Item)comboBox1.SelectedItem;
+            Item hebrewletter = new();
+            if (comboBox1.SelectedItem != null)
+            {
+                hebrewletter = (Item)comboBox1.SelectedItem;
+            }
             bool succes = int.TryParse(txtXthCharacter.Text, out int xthcharacter);
             if (!succes)
             {
@@ -322,7 +328,7 @@ namespace BibleCode
                 valuesOK = false;
             }
             if (valuesOK)
-                BibleSearch(txtSearchFromVerse.Text, fred.Value, xthcharacter, searchdistance, numberOfCharacters);
+                BibleSearch(txtSearchFromVerse.Text, hebrewletter.Value, xthcharacter, searchdistance, numberOfCharacters);
         }
 
         private void NumberOfChars_Click(object sender, EventArgs e)
@@ -347,7 +353,7 @@ namespace BibleCode
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void Label5_Click(object sender, EventArgs e)
         {
 
         }

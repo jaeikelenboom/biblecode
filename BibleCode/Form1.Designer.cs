@@ -69,7 +69,7 @@
             // 
             // richTextBoxHebrew
             // 
-            richTextBoxHebrew.Font = new Font("Dubai", 80F, FontStyle.Regular, GraphicsUnit.Point);
+            richTextBoxHebrew.Font = new Font("Dubai", 80F);
             richTextBoxHebrew.Location = new Point(23, 90);
             richTextBoxHebrew.Name = "richTextBoxHebrew";
             richTextBoxHebrew.RightToLeft = RightToLeft.Yes;
@@ -79,7 +79,7 @@
             // 
             // richTextBox2
             // 
-            richTextBox2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            richTextBox2.Font = new Font("Segoe UI", 15.75F);
             richTextBox2.Location = new Point(23, 638);
             richTextBox2.Name = "richTextBox2";
             richTextBox2.RightToLeft = RightToLeft.Yes;
@@ -159,7 +159,7 @@
             // 
             // richTextBoxHebrewConcise
             // 
-            richTextBoxHebrewConcise.Font = new Font("Dubai", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            richTextBoxHebrewConcise.Font = new Font("Dubai", 30F);
             richTextBoxHebrewConcise.Location = new Point(23, 349);
             richTextBoxHebrewConcise.Name = "richTextBoxHebrewConcise";
             richTextBoxHebrewConcise.RightToLeft = RightToLeft.Yes;
@@ -388,7 +388,7 @@
             label5.Size = new Size(176, 15);
             label5.TabIndex = 46;
             label5.Text = "Number of characters to display";
-            label5.Click += label5_Click;
+            label5.Click += Label5_Click;
             // 
             // BibleCode
             // 
