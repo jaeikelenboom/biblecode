@@ -148,7 +148,7 @@ namespace BibleCode
         }
         private void BibleSearch(string searchfromverse, char searchforcharacter, int xthcharacter, int searchdistance, int numberofcharacters)
         {
-            int consizesize = (int)(searchdistance * 8) + 28;
+            int consizesize = (int)(Math.Abs(searchdistance) * 8) + 28;
 
             richTextBoxHebrewConcise.Size = new System.Drawing.Size(consizesize, 176);
             string thetext = richTextBoxHebrew.Text;
@@ -164,6 +164,7 @@ namespace BibleCode
                     hebrewconsise += thetext[i];
                 }
             }
+      
             File.WriteAllText("c:\\intel\\text.rft", hebrewconsise);
 
             int startpoint;
@@ -179,7 +180,6 @@ namespace BibleCode
                     if (thetext[textcounter] < '\x05D0')
                     {
                         nothebrewcharacters++;
-
                     }
                 }
                 // Find the character to search for in the text
@@ -217,30 +217,60 @@ namespace BibleCode
             {
                 int endofreading;
                 endofreading = thetext.Length;
-
-                for (int textcounter = textpointer; textcounter < endofreading; textcounter++)
+                if (searchdistance > 0)
                 {
-                    if (thetext[textcounter] > '\x05CF')
+                    for (int textcounter = textpointer; textcounter < endofreading; textcounter++)
                     {
-                        countertosearchdistance++;
-                        if (countertosearchdistance == searchdistance)
+                        if (thetext[textcounter] > '\x05CF')
                         {
-                            solution += thetext[textcounter];
-                            countertosearchdistance = 0;
-                            richTextBoxHebrew.Select(textcounter, 1);
-                            richTextBoxHebrew.SelectionColor = Color.Red;
-                            richTextBoxHebrewConcise.Select(textcounter - nothebrewcharacters, 1);
-                            richTextBoxHebrewConcise.SelectionColor = Color.Red;
+                            countertosearchdistance++;
+                            if (countertosearchdistance == searchdistance)
+                            {
+                                solution += thetext[textcounter];
+                                countertosearchdistance = 0;
+                                richTextBoxHebrew.Select(textcounter, 1);
+                                richTextBoxHebrew.SelectionColor = Color.Red;
+                                richTextBoxHebrewConcise.Select(textcounter - nothebrewcharacters, 1);
+                                richTextBoxHebrewConcise.SelectionColor = Color.Red;
+                            }
+                        }
+                        if (thetext[textcounter] < '\x05D0')
+                        {
+                            nothebrewcharacters++;
+                        }
+                        if (solution.Length > (numberofcharacters - 1))
+                        {
+                            break;
                         }
                     }
-                    if (thetext[textcounter] < '\x05D0')
+                }
+                else
+                {
+                    for (int textcounter = textpointer; textcounter < endofreading; textcounter--)
                     {
-                        nothebrewcharacters++;
+                        if (thetext[textcounter] > '\x05CF')
+                        {
+                            countertosearchdistance--;
+                            if (countertosearchdistance == searchdistance)
+                            {
+                                solution += thetext[textcounter];
+                                countertosearchdistance = 0;
+                                richTextBoxHebrew.Select(textcounter, 1);
+                                richTextBoxHebrew.SelectionColor = Color.Red;
+                                richTextBoxHebrewConcise.Select(textcounter - nothebrewcharacters, 1);
+                                richTextBoxHebrewConcise.SelectionColor = Color.Red;
+                            }
+                        }
+                        if (thetext[textcounter] < '\x05D0')
+                        {
+                            nothebrewcharacters++;
+                        }
+                        if (solution.Length > (numberofcharacters - 1))
+                        {
+                            break;
+                        }
                     }
-                    if (solution.Length > (numberofcharacters - 1))
-                    {
-                        break;
-                    }
+
                 }
                 richTextBox2.Text = solution;
             }
@@ -310,9 +340,9 @@ namespace BibleCode
                 richTextBox2.Text = "Search distance is not numberic";
                 valuesOK = false;
             }
-            if (searchdistance < 1)
+            if (searchdistance == 0)
             {
-                richTextBox2.Text = "Search distance cannot be 0 or negative";
+                richTextBox2.Text = "Search distance cannot be 0";
                 valuesOK = false;
             }
 
