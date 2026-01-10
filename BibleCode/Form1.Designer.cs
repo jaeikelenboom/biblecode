@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             richTextBoxHebrew = new RichTextBox();
-            richTextBox2 = new RichTextBox();
+            richTextBoxMessage = new RichTextBox();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -66,6 +66,7 @@
             txtNumberofCharacters = new TextBox();
             label5 = new Label();
             label12 = new Label();
+            HebrewCharacterSize = new Label();
             SuspendLayout();
             // 
             // richTextBoxHebrew
@@ -78,15 +79,15 @@
             richTextBoxHebrew.TabIndex = 3;
             richTextBoxHebrew.Text = "";
             // 
-            // richTextBox2
+            // richTextBoxMessage
             // 
-            richTextBox2.Font = new Font("Segoe UI", 15.75F);
-            richTextBox2.Location = new Point(23, 638);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.RightToLeft = RightToLeft.Yes;
-            richTextBox2.Size = new Size(457, 158);
-            richTextBox2.TabIndex = 4;
-            richTextBox2.Text = "";
+            richTextBoxMessage.Font = new Font("Segoe UI", 15.75F);
+            richTextBoxMessage.Location = new Point(23, 638);
+            richTextBoxMessage.Name = "richTextBoxMessage";
+            richTextBoxMessage.RightToLeft = RightToLeft.Yes;
+            richTextBoxMessage.Size = new Size(457, 158);
+            richTextBoxMessage.TabIndex = 4;
+            richTextBoxMessage.Text = "";
             // 
             // button1
             // 
@@ -140,7 +141,7 @@
             // 
             // button6
             // 
-            button6.Location = new Point(810, 453);
+            button6.Location = new Point(963, 597);
             button6.Name = "button6";
             button6.Size = new Size(163, 23);
             button6.TabIndex = 12;
@@ -150,7 +151,7 @@
             // 
             // btnNumberOfChars
             // 
-            btnNumberOfChars.Location = new Point(810, 410);
+            btnNumberOfChars.Location = new Point(549, 694);
             btnNumberOfChars.Name = "btnNumberOfChars";
             btnNumberOfChars.Size = new Size(273, 23);
             btnNumberOfChars.TabIndex = 13;
@@ -160,11 +161,11 @@
             // 
             // richTextBoxHebrewConcise
             // 
-            richTextBoxHebrewConcise.Font = new Font("Dubai", 30F);
+            richTextBoxHebrewConcise.Font = new Font("Courier New", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             richTextBoxHebrewConcise.Location = new Point(23, 349);
             richTextBoxHebrewConcise.Name = "richTextBoxHebrewConcise";
             richTextBoxHebrewConcise.RightToLeft = RightToLeft.Yes;
-            richTextBoxHebrewConcise.Size = new Size(425, 176);
+            richTextBoxHebrewConcise.Size = new Size(1133, 176);
             richTextBoxHebrewConcise.TabIndex = 14;
             richTextBoxHebrewConcise.Text = "";
             // 
@@ -180,7 +181,7 @@
             // 
             // button9
             // 
-            button9.Location = new Point(810, 502);
+            button9.Location = new Point(963, 638);
             button9.Name = "button9";
             button9.Size = new Size(163, 23);
             button9.TabIndex = 16;
@@ -190,7 +191,7 @@
             // 
             // button10
             // 
-            button10.Location = new Point(810, 546);
+            button10.Location = new Point(963, 685);
             button10.Name = "button10";
             button10.Size = new Size(163, 23);
             button10.TabIndex = 17;
@@ -200,7 +201,7 @@
             // 
             // button11
             // 
-            button11.Location = new Point(810, 591);
+            button11.Location = new Point(963, 734);
             button11.Name = "button11";
             button11.Size = new Size(163, 23);
             button11.TabIndex = 18;
@@ -389,7 +390,6 @@
             label5.Size = new Size(176, 15);
             label5.TabIndex = 46;
             label5.Text = "Number of characters to display";
-            label5.Click += Label5_Click;
             // 
             // label12
             // 
@@ -399,13 +399,22 @@
             label12.Size = new Size(261, 15);
             label12.TabIndex = 47;
             label12.Text = "jezus-komt-terug.nl  Bible Code      Version 26.01";
-            label12.Click += label12_Click;
+            // 
+            // HebrewCharacterSize
+            // 
+            HebrewCharacterSize.AutoSize = true;
+            HebrewCharacterSize.Location = new Point(24, 537);
+            HebrewCharacterSize.Name = "HebrewCharacterSize";
+            HebrewCharacterSize.Size = new Size(142, 15);
+            HebrewCharacterSize.TabIndex = 48;
+            HebrewCharacterSize.Text = "Hebrew Character size: 50";
             // 
             // BibleCode
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1168, 859);
+            Controls.Add(HebrewCharacterSize);
             Controls.Add(label12);
             Controls.Add(label5);
             Controls.Add(txtNumberofCharacters);
@@ -437,7 +446,7 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(richTextBox2);
+            Controls.Add(richTextBoxMessage);
             Controls.Add(richTextBoxHebrew);
             Controls.Add(menuStrip1);
             Controls.Add(menuStrip2);
@@ -455,7 +464,7 @@
 
         #endregion
         private RichTextBox richTextBoxHebrew;
-        private RichTextBox richTextBox2;
+        private RichTextBox richTextBoxMessage;
         private Button button1;
         private Button button2;
         private Button button3;
@@ -491,5 +500,6 @@
         private TextBox txtNumberofCharacters;
         private Label label5;
         private Label label12;
+        private Label HebrewCharacterSize;
     }
 }
