@@ -65,6 +65,7 @@
             Thora = new Button();
             txtNumberofCharacters = new TextBox();
             label5 = new Label();
+            label12 = new Label();
             SuspendLayout();
             // 
             // richTextBoxHebrew
@@ -139,7 +140,7 @@
             // 
             // button6
             // 
-            button6.Location = new Point(810, 590);
+            button6.Location = new Point(810, 453);
             button6.Name = "button6";
             button6.Size = new Size(163, 23);
             button6.TabIndex = 12;
@@ -149,7 +150,7 @@
             // 
             // btnNumberOfChars
             // 
-            btnNumberOfChars.Location = new Point(810, 540);
+            btnNumberOfChars.Location = new Point(810, 410);
             btnNumberOfChars.Name = "btnNumberOfChars";
             btnNumberOfChars.Size = new Size(273, 23);
             btnNumberOfChars.TabIndex = 13;
@@ -179,7 +180,7 @@
             // 
             // button9
             // 
-            button9.Location = new Point(810, 649);
+            button9.Location = new Point(810, 502);
             button9.Name = "button9";
             button9.Size = new Size(163, 23);
             button9.TabIndex = 16;
@@ -189,7 +190,7 @@
             // 
             // button10
             // 
-            button10.Location = new Point(810, 707);
+            button10.Location = new Point(810, 546);
             button10.Name = "button10";
             button10.Size = new Size(163, 23);
             button10.TabIndex = 17;
@@ -199,7 +200,7 @@
             // 
             // button11
             // 
-            button11.Location = new Point(810, 773);
+            button11.Location = new Point(810, 591);
             button11.Name = "button11";
             button11.Size = new Size(163, 23);
             button11.TabIndex = 18;
@@ -390,11 +391,22 @@
             label5.Text = "Number of characters to display";
             label5.Click += Label5_Click;
             // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(848, 781);
+            label12.Name = "label12";
+            label12.Size = new Size(261, 15);
+            label12.TabIndex = 47;
+            label12.Text = "jezus-komt-terug.nl  Bible Code      Version 26.01";
+            label12.Click += label12_Click;
+            // 
             // BibleCode
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1168, 859);
+            Controls.Add(label12);
             Controls.Add(label5);
             Controls.Add(txtNumberofCharacters);
             Controls.Add(Thora);
@@ -478,5 +490,6 @@
         private Button Thora;
         private TextBox txtNumberofCharacters;
         private Label label5;
+        private Label label12;
     }
 }
